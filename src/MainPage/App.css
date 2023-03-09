@@ -1,0 +1,219 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.Body {
+  /*min-height: 100%;*/
+  min-width: 640px;
+  width: 100%;
+  height: 800px;
+  /*position: fixed;*/
+  top: 0;
+  left: 0;
+  position: relative;
+  margin-top: -63px;
+  z-index: 2;
+}
+
+@media screen and (max-width: 640px){
+  img.bg {
+    left: 50%;
+    margin-left: -320px;
+  }
+}
+
+.About {
+  position: relative;
+  z-index: 2;
+  margin-top: 280px;
+}
+
+.TextAbout {
+  margin: 70px 200px 100px 200px;
+}
+
+.Contacts {
+  height: 200px;
+  background-color: #F7F7F7;
+  text-align: left;
+}
+
+.TextContacts {
+  margin-left: 100px;
+}
+
+.Tg {
+  height: 40px;
+  width: 40px;
+  margin-top: 20px;
+}
+
+.Number {
+  margin-top: -38px;
+  margin-left: 50px;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*тест кликер*/
+
+.Slider {
+  background-color: #F7F7F7;
+  margin-top: -400px;
+  width: 700px;
+  margin-left: 400px;
+  z-index: 3;
+  border-radius: 20px/20px;
+  height: 200px;
+}
+
+.input1 {
+  height: 30px;
+  margin: 5px 5px 5px 5px;
+  border-color: #00ff00;
+  border-radius: 5px/5px;
+}
+
+.form_radio {
+  margin-bottom: 10px;
+}
+.form_radio input[type=radio] {
+  display: none;
+}
+.form_radio label {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  padding-left: 25px;
+  margin-right: 0;
+  line-height: 18px;
+  user-select: none;
+}
+.form_radio label:before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 21px;
+  position: absolute;
+  left: 0;
+  bottom: 1px;
+  background: url(../Photos/radio-0.png) 0 0 no-repeat;
+}
+
+/* Checked */
+.form_radio input[type=radio]:checked + label:before {
+  background: url(../Photos/radio-1.png) 0 0 no-repeat;
+}
+
+/* Hover */
+.form_radio label:hover:before {
+  filter: brightness(120%);
+}
+
+/* Disabled */
+.form_radio input[type=radio]:disabled + label:before {
+  filter: grayscale(100%);
+}
+
+.OtkudaKuda {
+  margin-left: -300px;
+}
+.Form1Part2 {
+  margin-top: -89px;
+  margin-right: -238px;
+}
+.gradient-button {
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+  padding: 8px 30px;
+  margin-top: -19000px;
+  margin-right: -575px;
+  border-radius: 15px/15px;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-image: linear-gradient(to right, #6cff5b 0%, #01da11 51%, #6CFF5BFF 100%);
+  background-size: 200% auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+  transition: .5s;
+}
+.gradient-button:hover {
+  background-position: right center;
+}
+
+.City1 {
+  color: white;
+  height: 200px;
+  background: url(../Photos/Cityes/stambul-dostoprimechatelnosti.jpg) 0 0 no-repeat;
+  margin: 40px;
+  border-radius: 20px/20px;
+}
+.City2 {
+  color: white;
+  height: 200px;
+  background: url(../Photos/Cityes/rim.jpg) 0 0 no-repeat;
+  margin: 40px;
+  border-radius: 20px/20px;
+}
+.City3 {
+  color: white;
+  height: 200px;
+  background: url(../Photos/Cityes/berlin.jpg) 0 0 no-repeat;
+  margin: 40px;
+  border-radius: 20px/20px;
+}
+.City4 {
+  color: white;
+  height: 200px;
+  background: url(../Photos/Cityes/paris.jpg) 0 0 no-repeat;
+  margin: 40px;
+  border-radius: 20px/20px;
+}
+.City5 {
+  color: white;
+  height: 200px;
+  background: url(../Photos/Cityes/allepo.jpg) 0 0 no-repeat;
+  margin: 40px;
+  border-radius: 20px/20px;
+}
+.City6 {
+  color: white;
+  height: 200px;
+  background: url(../Photos/Cityes/mariupol.jpg) 0 0 no-repeat;
+  margin: 40px;
+  border-radius: 20px/20px;
+}
