@@ -40,7 +40,6 @@ export default function App() {
                                 <li><a onClick={event => Click(1)}>Статус рейса</a></li>
                                 <li><a onClick={event => Click(2)}>Регистрация на рейс</a></li>
                                 <li><a onClick={event => Click(3)}>Багаж</a></li>
-                                <li><a onClick={event => Click(4)}>Дополнительные услуги</a></li>
                             </ul>
                         </nav>
                         <div className="Form1">
@@ -78,10 +77,9 @@ export default function App() {
                                 <li className="active"><a>Статус рейса</a></li>
                                 <li><a onClick={event => Click(2)}>Регистрация на рейс</a></li>
                                 <li><a onClick={event => Click(3)}>Багаж</a></li>
-                                <li><a onClick={event => Click(4)}>Дополнительные услуги</a></li>
                             </ul>
                         </nav>
-                        <div>Про статус рейса</div>
+                        <div className="Form1">Про статус рейса</div>
                     </div>
                 )
             case 2:
@@ -93,10 +91,9 @@ export default function App() {
                                 <li><a onClick={event => Click(1)}>Статус рейса</a></li>
                                 <li className="active"><a>Регистрация на рейс</a></li>
                                 <li><a onClick={event => Click(3)}>Багаж</a></li>
-                                <li><a onClick={event => Click(4)}>Дополнительные услуги</a></li>
                             </ul>
                         </nav>
-                        <div>Регистрация на рейс хз что тут будет</div>
+                        <div className="Form1">Регистрация на рейс хз что тут будет</div>
                     </div>
                 )
             case 3:
@@ -108,25 +105,9 @@ export default function App() {
                                 <li><a onClick={event => Click(1)}>Статус рейса</a></li>
                                 <li><a onClick={event => Click(2)}>Регистрация на рейс</a></li>
                                 <li className="active"><a>Багаж</a></li>
-                                <li><a onClick={event => Click(4)}>Дополнительные услуги</a></li>
                             </ul>
                         </nav>
-                        <div>Что-то про багаж</div>
-                    </div>
-                )
-            case 4:
-                return (
-                    <div className="Menu">
-                        <nav className="tabs">
-                            <ul>
-                                <li><a onClick={event => Click(0)}>Купить билеты</a></li>
-                                <li><a onClick={event => Click(1)}>Статус рейса</a></li>
-                                <li><a onClick={event => Click(2)}>Регистрация на рейс</a></li>
-                                <li><a onClick={event => Click(3)}>Багаж</a></li>
-                                <li className="active"><a>Дополнительные услуги</a></li>
-                            </ul>
-                        </nav>
-                        <div>мб ваще удалим это</div>
+                        <div className="Form1">Что-то про багаж</div>
                     </div>
                 )
         }

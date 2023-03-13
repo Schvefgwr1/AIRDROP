@@ -5,7 +5,7 @@
   height: 750px;
   width: 100%;
   background-image: url("../Photos/фон.png");
-  background-size: 1600px;
+  background-size: 100%;
 
 }
 .App-logo {
@@ -96,8 +96,14 @@
 
 /*Buy tickets in menu*/
 
+.Form1 {
+  background-color: white;
+  height: 88%;
+  border-radius: 0px 0px 20px 20px;
+}
+
 .Form1Part1 {
-  margin: 5px;
+  /*margin: 5px;*/
   position: relative;
   width: 100%;
 }
@@ -185,10 +191,9 @@
 
 /* CSS Menu */
 .tabs {
-  display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 16px;
+  width: 100%;
 }
 
 .tabs ul {
@@ -201,7 +206,7 @@
 }
 
 .tabs li {
-  margin-right: 16px;
+  width: 25%;
 }
 
 .tabs li:last-child {
@@ -209,10 +214,12 @@
 }
 
 .tabs a {
+  border-radius: 20px 20px 0px 0px;
+  background-color: #79055f;
   display: block;
   padding: 8px;
   font-size: 16px;
-  color: #333;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -222,17 +229,17 @@
 }
 
 .tabs .active a {
-  color: #fff;
-  background-color: #79055f;
+  color: black;
+  background-color: white;
+
 }
 
 .Menu {
-  background-color: white;
+  background-color: #79055f;
   width: 60%;
   height: 320px;
   position: relative;
   top: 250px;
   left: 20%;
   border-radius: 20px/20px;
-
 }
