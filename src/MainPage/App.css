@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  overflow-x: hidden;
 }
 .FirstPart {
   height: 750px;
@@ -98,7 +99,7 @@
 
 .Form1 {
   background-color: white;
-  height: 88%;
+  height: 89%;
   border-radius: 0px 0px 20px 20px;
 }
 
