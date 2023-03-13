@@ -1,7 +1,13 @@
 .App {
   text-align: center;
 }
+.FirstPart {
+  height: 750px;
+  width: 100%;
+  background-image: url("../Photos/фон.png");
+  background-size: 1600px;
 
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -17,7 +23,7 @@
   /*min-height: 100%;*/
   min-width: 640px;
   width: 100%;
-  height: 800px;
+  height: 100%;
   /*position: fixed;*/
   top: 0;
   left: 0;
@@ -36,7 +42,7 @@
 .About {
   position: relative;
   z-index: 2;
-  margin-top: 280px;
+  margin-top: 100px;
 }
 
 .TextAbout {
@@ -88,85 +94,42 @@
   }
 }
 
-/*тест кликер*/
+/*Buy tickets in menu*/
 
-.Slider {
-  background-color: #F7F7F7;
-  margin-top: -400px;
-  width: 700px;
-  margin-left: 400px;
-  z-index: 3;
-  border-radius: 20px/20px;
-  height: 200px;
+.Form1Part1 {
+  margin: 5px;
+  position: relative;
+  width: 100%;
 }
 
 .input1 {
-  height: 30px;
-  margin: 5px 5px 5px 5px;
-  border-color: #00ff00;
+  height: 60px;
+  width: 200px;
+  border-width: medium;
+  border-color: #e30ccd;
   border-radius: 5px/5px;
 }
 
-.form_radio {
-  margin-bottom: 10px;
-}
-.form_radio input[type=radio] {
-  display: none;
-}
-.form_radio label {
-  display: inline-block;
-  cursor: pointer;
-  position: relative;
-  padding-left: 25px;
-  margin-right: 0;
-  line-height: 18px;
-  user-select: none;
-}
-.form_radio label:before {
-  content: "";
-  display: inline-block;
-  width: 20px;
-  height: 21px;
-  position: absolute;
-  left: 0;
-  bottom: 1px;
-  background: url(../Photos/radio-0.png) 0 0 no-repeat;
-}
-
-/* Checked */
-.form_radio input[type=radio]:checked + label:before {
-  background: url(../Photos/radio-1.png) 0 0 no-repeat;
-}
-
-/* Hover */
-.form_radio label:hover:before {
-  filter: brightness(120%);
-}
-
-/* Disabled */
-.form_radio input[type=radio]:disabled + label:before {
-  filter: grayscale(100%);
-}
-
-.OtkudaKuda {
-  margin-left: -300px;
-}
 .Form1Part2 {
-  margin-top: -89px;
-  margin-right: -238px;
+  position: relative;
+  width: 100%;
 }
+
+.Button {
+  margin-top: 5px;
+  margin-left: 80%;
+}
+
 .gradient-button {
   text-decoration: none;
   display: inline-block;
   color: white;
   padding: 8px 30px;
-  margin-top: -19000px;
-  margin-right: -575px;
   border-radius: 15px/15px;
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   letter-spacing: 2px;
-  background-image: linear-gradient(to right, #6cff5b 0%, #01da11 51%, #6CFF5BFF 100%);
+  background-image: linear-gradient(to right, #e30ccd 0%, #79055f 51%, #e30ccd 100%);
   background-size: 200% auto;
   box-shadow: 0 0 20px rgba(0, 0, 0, .1);
   transition: .5s;
@@ -174,6 +137,8 @@
 .gradient-button:hover {
   background-position: right center;
 }
+
+/* Slider of cites*/
 
 .City1 {
   color: white;
@@ -216,4 +181,58 @@
   background: url(../Photos/Cityes/mariupol.jpg) 0 0 no-repeat;
   margin: 40px;
   border-radius: 20px/20px;
+}
+
+/* CSS Menu */
+.tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.tabs ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tabs li {
+  margin-right: 16px;
+}
+
+.tabs li:last-child {
+  margin-right: 0;
+}
+
+.tabs a {
+  display: block;
+  padding: 8px;
+  font-size: 16px;
+  color: #333;
+  text-decoration: none;
+}
+
+.tabs a:hover {
+  color: #fff;
+  background-color: #e30ccd;
+}
+
+.tabs .active a {
+  color: #fff;
+  background-color: #79055f;
+}
+
+.Menu {
+  background-color: white;
+  width: 60%;
+  height: 320px;
+  position: relative;
+  top: 250px;
+  left: 20%;
+  border-radius: 20px/20px;
+
 }
