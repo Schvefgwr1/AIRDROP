@@ -104,35 +104,123 @@
 }
 
 .Form1Part1 {
-  /*margin: 5px;*/
-  position: relative;
-  width: 100%;
+  background-color: white;
+  height: 100px;
 }
 
 .input1 {
   height: 60px;
-  width: 200px;
+  width: 150px;
   border-width: medium;
   border-color: #e30ccd;
-  border-radius: 5px/5px;
+  border-style: solid;
+  border-radius: 0px 5px 5px 0px;
+}
+
+input::-webkit-input-placeholder {
+  color: #79055f;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.input0 {
+  height: 60px;
+  width: 150px;
+  border-width: medium;
+  border-color: #e30ccd;
+  border-style: solid;
+  border-radius: 5px 0px 0px 5px;
+}
+
+.input2 {
+  height: 60px;
+  width: 150px;
+  border-width: medium;
+  border-color: #e30ccd;
+  border-style: solid;
+}
+
+.input3 {
+  height: 60px;
+  width: 150px;
+  border-width: medium;
+  border-color: #e30ccd;
+  border-style: solid;
+  border-radius: 0px 5px 5px 0px;
+}
+
+.tuda {
+  margin-left: 10%;
+  height: 60px;
+  width: 60px;
+  background-image: url("../Photos/FlyOut.jpg");
+  background-size: 100%;
+  display: inline-block;
+  position: relative;
+  top: 28px;
+  border-width: medium;
+  border-color: #e30ccd;
+  border-style: solid;
+  border-radius: 5px 0px 0px 5px;
+}
+
+.obratno {
+  height: 60px;
+  width: 60px;
+  background-image: url("../Photos/FlyIn.jpg");
+  background-size: 100%;
+  display: inline-block;
+  position: relative;
+  top: 28px;
+  border-width: medium;
+  border-color: #e30ccd;
+  border-style: solid;
 }
 
 .Form1Part2 {
   position: relative;
-  width: 100%;
+  top: 10%;
+  right: 29%;
+}
+
+.input4 {
+  height: 60px;
+  width: 155px;
+  border-width: medium;
+  border-color: #e30ccd;
+  border-style: solid;
+  border-radius: 5px 0px 0px 5px;
+}
+
+.input5 {
+  height: 67px;
+  width: 155px;
+  border-width: medium;
+  border-color: #e30ccd;
+  border-style: solid;
+  border-radius: 0px 5px 5px 0px;
+}
+
+.Option {
+  color: #79055f;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
 }
 
 .Button {
-  margin-top: 5px;
-  margin-left: 80%;
+  margin-left: 45%;
+  margin-top: -2%
 }
 
 .gradient-button {
+  margin-left: auto;
+  margin-right: auto;
   text-decoration: none;
-  display: inline-block;
   color: white;
-  padding: 8px 30px;
-  border-radius: 15px/15px;
+  padding: 26px 186px;
+  border-radius: 5px/5px;
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   letter-spacing: 2px;

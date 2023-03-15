@@ -43,23 +43,20 @@ export default function App() {
                             </ul>
                         </nav>
                         <div className="Form1">
+                            <br/>
                             <div className="Form1Part1">
-                                <label htmlFor="date">Укажите место отправки и назначения: </label>
-                                <input className='input1' type='text' placeholder="Откуда"/>
+                                <input className='input0' type='text' placeholder="Откуда"/>
                                 <input className='input1' type='text' placeholder="Куда"/>
-                            </div>
-                            <div className="Form1Part1">
-                                <label htmlFor="date">Туда: </label>
-                                <input className='input1' type="date" id="date" name="date"/>
-                                <label htmlFor="date">Обратно: </label>
-                                <input className='input1' type="date" id="date" name="date"/>
+                                <div className='tuda'></div>
+                                <input className='input2' type="date" id="date" name="date"/>
+                                <div className='obratno'></div>
+                                <input className='input3' type="date" id="date" name="date"/>
                             </div>
                             <div className="Form1Part2">
-                                <input className='input1' type='text' placeholder="Кол-во билетов"/>
-                                <label htmlFor="class">Класс:</label>
-                                <select className='input1'>
-                                    <option value="economy">Эконом</option>
-                                    <option value="business">Бизнес</option>
+                                <input className='input4' type='text' placeholder="Кол-во билетов"/>
+                                <select className='input5'>
+                                    <option className='Option' value="economy">Эконом</option>
+                                    <option className='Option' value="business">Бизнес</option>
                                 </select>
                             </div>
                             <div className="Button">
