@@ -154,7 +154,7 @@ input::-webkit-input-placeholder {
   margin-left: 10%;
   height: 60px;
   width: 60px;
-  background-image: url("../Photos/FlyOut.jpg");
+  background-image: url(../Photos/FlyOut.jpg);
   background-size: 100%;
   display: inline-block;
   position: relative;
@@ -168,7 +168,7 @@ input::-webkit-input-placeholder {
 .obratno {
   height: 60px;
   width: 60px;
-  background-image: url("../Photos/FlyIn.jpg");
+  background-image: url(../Photos/FlyIn.jpg);
   background-size: 100%;
   display: inline-block;
   position: relative;
@@ -231,6 +231,78 @@ input::-webkit-input-placeholder {
 }
 .gradient-button:hover {
   background-position: right center;
+}
+
+/*статус рейса*/
+
+.input6 {
+  margin-top: 5%;
+  height: 60px;
+  width: 155px;
+  border-width: medium;
+  border-color: #e30ccd;
+  border-style: solid;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.Button2 {
+  margin-top: 5%;
+}
+
+.input7 {
+  height: 60px;
+  width: 150px;
+  border-width: medium;
+  border-color: #e30ccd;
+  border-style: solid;
+}
+
+.tuda2 {
+  margin-left: 6%;
+  height: 60px;
+  width: 60px;
+  background-image: url(../Photos/FlyOut.jpg);
+  background-size: 100%;
+  display: inline-block;
+  position: relative;
+  top: 28px;
+  border-width: medium;
+  border-color: #e30ccd;
+  border-style: solid;
+  border-radius: 5px 0px 0px 5px;
+}
+
+/* Регистрация на рейс */
+
+.input8 {
+  margin-top: 5%;
+  height: 60px;
+  width: 340px;
+  border-width: medium;
+  border-color: #e30ccd;
+  border-style: solid;
+  border-radius: 5px 0px 0px 5px;
+}
+
+.input9 {
+  height: 60px;
+  width: 220px;
+  border-width: medium;
+  border-color: #e30ccd;
+  border-style: solid;
+  border-radius: 0px 5px 5px 0px;
+}
+
+/* Мои бронирования*/
+
+.input10 {
+  margin-top: 7%;
+  height: 60px;
+  width: 430px;
+  border-width: medium;
+  border-color: #e30ccd;
+  border-style: solid;
+  border-radius: 5px 5px 5px 5px;
 }
 
 /* Slider of cites*/

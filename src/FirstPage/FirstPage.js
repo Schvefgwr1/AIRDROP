@@ -1,15 +1,13 @@
-import logo from '../Photos/лого-removebg.png'
-import fon from '../Photos/фон.png'
+import React from "react";
+import { useState } from "react";
+import Slider from "react-slick";
 import tg from '../Photos/tg.png'
 import wt from '../Photos/wt.png'
-import './App.css'
+import './FirstPage.css'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import React, {Component} from "react";
-import Slider from "react-slick";
-import { useState } from "react";
 
-export default function App() {
+export default function FirstPage() {
 
     const settings2 = {
         className: "center",
@@ -76,7 +74,15 @@ export default function App() {
                                 <li><a onClick={event => Click(3)}>Багаж</a></li>
                             </ul>
                         </nav>
-                        <div className="Form1">Про статус рейса</div>
+                        <div className="Form1">
+                            <br/>
+                            <input className='input6' type='text' placeholder="Номер рейса"/>
+                            <div className='tuda2'></div>
+                            <input className='input7' type="date" id="date" name="date"/>
+                            <div className="Button2">
+                                <a href="" className="gradient-button">Найти</a>
+                            </div>
+                        </div>
                     </div>
                 )
             case 2:
@@ -90,7 +96,14 @@ export default function App() {
                                 <li><a onClick={event => Click(3)}>Багаж</a></li>
                             </ul>
                         </nav>
-                        <div className="Form1">Регистрация на рейс хз что тут будет</div>
+                        <div className="Form1">
+                            <br/>
+                            <input className='input8' type='text' placeholder="Фамилия пассажира (латиницой)"/>
+                            <input className='input9' type='text' placeholder='Номер заказа (брони)'/>
+                            <div className="Button2">
+                                <a href="" className="gradient-button">Найти</a>
+                            </div>
+                        </div>
                     </div>
                 )
             case 3:
@@ -101,10 +114,15 @@ export default function App() {
                                 <li><a onClick={event => Click(0)}>Купить билеты</a></li>
                                 <li><a onClick={event => Click(1)}>Статус рейса</a></li>
                                 <li><a onClick={event => Click(2)}>Регистрация на рейс</a></li>
-                                <li className="active"><a>Багаж</a></li>
+                                <li className="active"><a>Мои бронирования</a></li>
                             </ul>
                         </nav>
-                        <div className="Form1">Что-то про багаж</div>
+                        <div className='Form1'>
+                            <input className='input10' type='text' placeholder='Номер заказа (брони)'/>
+                            <div className="Button2">
+                                <a href="" className="gradient-button">Найти</a>
+                            </div>
+                        </div>
                     </div>
                 )
         }
@@ -194,4 +212,4 @@ export default function App() {
             </div>
         </div>
     );
-};
+}
