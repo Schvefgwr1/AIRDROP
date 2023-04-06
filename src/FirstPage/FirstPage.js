@@ -1,11 +1,11 @@
 import React from "react";
 import { useState } from "react";
 import Slider from "react-slick";
-import tg from '../Photos/tg.png'
-import wt from '../Photos/wt.png'
+import "../Contacts/Contacts"
 import './FirstPage.css'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Contacts from "../Contacts/Contacts";
 
 export default function FirstPage() {
 
@@ -19,7 +19,7 @@ export default function FirstPage() {
         autoplaySpeed: 50
     };
 
-    function MenuPart() {
+   function MenuPart() {
 
         const [part, setPart] = useState(0);
 
@@ -192,22 +192,7 @@ export default function FirstPage() {
                         </div>
                     </Slider>
 
-                    <div className="Contacts">
-                        <div className="TextContacts">
-                            <br/>
-                            Поддержка клиентов
-                            <br/>
-                            <img src={tg} alt="" className="Tg"/>
-                            <div className="Number">
-                                +7 (391) 222 - 02 - 22
-                            </div>
-                            <img src={wt} alt="" className="Tg"/>
-                            <div className="Number">
-                                +7 (391) 222 - 02 - 22
-                            </div>
-                        </div>
-
-                    </div>
+                    <Contacts/>
                 </div>
             </div>
         </div>

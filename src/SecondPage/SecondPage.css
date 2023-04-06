@@ -1,0 +1,249 @@
+.App {
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.FirstPart_ {
+    height: 300px;
+    width: 100%;
+    background-image: url("../Photos/фон.png");
+    background-size: 100%;
+    background-position-y: 400px;
+}
+
+input::-webkit-input-placeholder {
+    color: #79055f;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.Inputs {
+    margin-left: 15%;
+}
+
+.input0_ {
+    height: 59px;
+    width: 150px;
+    border-width: medium;
+    display: inline-block;
+    border-color: #e30ccd;
+    border-style: solid;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.input1_ {
+    height: 59px;
+    width: 150px;
+    border-width: medium;
+    display: inline-block;
+    border-color: #e30ccd;
+    border-style: solid;
+}
+
+.input2_ {
+    height: 60px;
+    width: 150px;
+    border-width: medium;
+    border-color: #e30ccd;
+    border-style: solid;
+    display: inline-block;
+}
+
+.input3_ {
+    height: 60px;
+    width: 150px;
+    border-width: medium;
+    border-color: #e30ccd;
+    border-style: solid;
+
+    display: inline-block;
+}
+
+.tuda_ {
+    height: 60px;
+    width: 60px;
+    background-image: url(../Photos/FlyOut.jpg);
+    background-size: 100%;
+    display: inline-block;
+    position: relative;
+    top: 28px;
+    border-width: medium;
+    border-color: #e30ccd;
+    border-style: solid;
+}
+
+.obratno_ {
+    height: 60px;
+    width: 60px;
+    background-image: url(../Photos/FlyIn.jpg);
+    background-size: 100%;
+    display: inline-block;
+    position: relative;
+    top: 28px;
+    border-width: medium;
+    border-color: #e30ccd;
+    border-style: solid;
+}
+
+input[type="date"]::before {
+    color: #050404;
+    content: attr(placeholder);
+}
+input[type="date"] {
+    color: #ffffff;
+}
+input[type="date"]:focus,
+input[type="date"]:valid {
+    color: #666666;
+}
+input[type="date"]:focus::before,
+input[type="date"]:valid::before {
+    content: "" !important;
+}
+
+.input4_ {
+    position: relative;
+    height: 59px;
+    width: 155px;
+    border-width: medium;
+    border-color: #e30ccd;
+    border-style: solid;
+    display: inline-block;
+}
+
+.input5_ {
+    height: 65px;
+    position: relative;
+    margin-top: 1px;
+    width: 155px;
+    border-width: medium;
+    border-color: #e30ccd;
+    border-style: solid;
+    border-radius: 0px 5px 5px 0px;
+    display: inline-block;
+}
+
+.Button_ {
+    margin-top: 5%;
+    margin-left: 35%;
+}
+
+.gradient-button_ {
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration: none;
+    color: white;
+    padding: 26px 186px;
+    border-radius: 5px/5px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-image: linear-gradient(to right, #e30ccd 0%, #79055f 51%, #e30ccd 100%);
+    background-size: 200% auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+    transition: .5s;
+}
+.gradient-button_:hover {
+    background-position: right center;
+}
+
+.TextFlight {
+    font-size: 25px;
+    line-height: 48px;
+    font-style: normal;
+    font-weight: 400;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+
+.SecondPart_ {
+
+}
+
+.FlightCard {
+    margin-left: 5%;
+    height: 200px;
+    width: 90%;
+    border: 2px solid #E4BAF8;
+    border-radius: 10px/10px;
+    margin-top: 50px;
+}
+
+.Block1 {
+    margin-left: 55%;
+    position: relative;
+    top: -112px;
+    height: 140px;
+    width: 20%;
+    border-radius: 10px/10px;
+    background-color: #f3f3f3;
+    display: inline-block;
+
+}
+
+.Block2 {
+    margin-left: 78%;
+    position: relative;
+    top: -252px;
+    height: 140px;
+    width: 20%;
+    border-radius: 10px/10px;
+    background-color: #f3f3f3;
+    display: inline-block;
+}
+
+.BlockText {
+    font-weight: 550;
+    font-size: 24px;
+    position: relative;
+    top: 8%;
+    left: 4%;
+}
+
+.TextInformation {
+    position: relative;
+    left: 20px;
+    top: 28px;
+    height: 140px;
+    width: 50%;
+    background-color: #ffffff;
+    display: inline-block;
+}
+
+.TextPeresadki {
+    text-align: right;
+    font-weight: 550;
+    font-size: 24px;
+}
+
+.TextInf {
+    text-align: center;
+    font-weight: 550;
+    font-size: 24px;
+    position: relative;
+    top: 10px;
+}
+
+.Options {
+    width: 90%;
+    height: 80px;
+    margin-left: 5%;
+}
+
+.Sort {
+    margin-left: 80%;
+    margin-top: 10px;
+    height: 60px;
+    width: 20%;
+    border-color: #E4BAF8;
+    border-width: 3px;
+    border-radius: 20px/20px;
+}
+
+.TextOption {
+    text-align: center;
+    font-weight: 400;
+    font-size: 18px;
+    border-color: #E4BAF8;
+}

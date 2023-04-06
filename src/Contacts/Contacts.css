@@ -1,0 +1,21 @@
+.Contacts {
+    margin-top: 40px;
+    height: 200px;
+    background-color: #F7F7F7;
+    text-align: left;
+}
+
+.TextContacts {
+    margin-left: 100px;
+}
+
+.Tg {
+    height: 40px;
+    width: 40px;
+    margin-top: 20px;
+}
+
+.Number {
+    margin-top: -38px;
+    margin-left: 50px;
+}

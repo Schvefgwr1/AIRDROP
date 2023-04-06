@@ -50,27 +50,6 @@
   margin: 70px 200px 100px 200px;
 }
 
-.Contacts {
-  height: 200px;
-  background-color: #F7F7F7;
-  text-align: left;
-}
-
-.TextContacts {
-  margin-left: 100px;
-}
-
-.Tg {
-  height: 40px;
-  width: 40px;
-  margin-top: 20px;
-}
-
-.Number {
-  margin-top: -38px;
-  margin-left: 50px;
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -139,6 +118,8 @@ input::-webkit-input-placeholder {
   border-width: medium;
   border-color: #e30ccd;
   border-style: solid;
+  position: relative;
+  top: -4px;
 }
 
 .input3 {
@@ -148,6 +129,8 @@ input::-webkit-input-placeholder {
   border-color: #e30ccd;
   border-style: solid;
   border-radius: 0px 5px 5px 0px;
+  position: relative;
+  top: -4px;
 }
 
 .tuda {
@@ -255,6 +238,8 @@ input::-webkit-input-placeholder {
   border-width: medium;
   border-color: #e30ccd;
   border-style: solid;
+  position: relative;
+  top: -4px;
 }
 
 .tuda2 {
@@ -311,42 +296,42 @@ input::-webkit-input-placeholder {
   color: white;
   height: 200px;
   background: url(../Photos/Cityes/stambul-dostoprimechatelnosti.jpg) 0 0 no-repeat;
-  margin: 40px;
+
   border-radius: 20px/20px;
 }
 .City2 {
   color: white;
   height: 200px;
   background: url(../Photos/Cityes/rim.jpg) 0 0 no-repeat;
-  margin: 40px;
+
   border-radius: 20px/20px;
 }
 .City3 {
   color: white;
   height: 200px;
   background: url(../Photos/Cityes/berlin.jpg) 0 0 no-repeat;
-  margin: 40px;
+
   border-radius: 20px/20px;
 }
 .City4 {
   color: white;
   height: 200px;
   background: url(../Photos/Cityes/paris.jpg) 0 0 no-repeat;
-  margin: 40px;
+
   border-radius: 20px/20px;
 }
 .City5 {
   color: white;
   height: 200px;
   background: url(../Photos/Cityes/allepo.jpg) 0 0 no-repeat;
-  margin: 40px;
+
   border-radius: 20px/20px;
 }
 .City6 {
   color: white;
   height: 200px;
   background: url(../Photos/Cityes/mariupol.jpg) 0 0 no-repeat;
-  margin: 40px;
+
   border-radius: 20px/20px;
 }
 
