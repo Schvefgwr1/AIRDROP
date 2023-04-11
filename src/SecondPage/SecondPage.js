@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {Component, useEffect} from "react";
 import { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -10,6 +10,47 @@ import axios from "axios";
 
 export default function SecondPage() {
     const location = useLocation();
+
+    const [response, setResponse] = useState();
+
+    const [state_res, setStateRes] = useState(false);
+
+    useEffect(() => {
+        console.log("in request");
+        let url = 'http://95.165.11.56:7654/' + 'flights';
+        let data = {
+            'departure_airport': location.state['d_airport'],
+            'arrival_airport': location.state['ar_airport'],
+            'max_transits': location.state['max_transits'],
+            'departure_date': location.state['dep_date1'],
+            'fare_condition': location.state['fare_con'],
+            'num_of_passengers': location.state['num_pass']
+        }
+        axios.get(
+            url
+        ).then(
+            res => {
+                setResponse(res.data.positions);
+                console.log("Response lololol" + new Date());
+                console.log(res.data);
+                setStateRes(true);
+            }
+        ).catch(
+            (error)=>{
+                if(error.response.status === 403) {
+
+                }
+                if(error.response.status === 402) {
+
+                }
+                console.log('error')
+            }
+        )
+    }, []);
+
+    // if(state_res === false) {
+    //     FlightsRequest();
+    // }
 
     function FirstPart(otkuda, kuda, date1, date2, k_bil, Class) {
         const [selected, setSelected] = useState('');
@@ -50,10 +91,6 @@ export default function SecondPage() {
         let months = ["Января", "Февраля", "Марта", "Апреля", "Мая", "Июня",
                       "Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря"];
 
-        const [response, setResponse] = useState();
-
-        const [state_res, setStateRes] = useState(false);
-
         const settings = {
             className: "center",
             centerMode: true,
@@ -64,47 +101,11 @@ export default function SecondPage() {
             speed: 500
         };
 
-        const FlightsRequest = async () => {
-            let url = 'http://95.165.11.56:7654/' + 'flights';
-            let data = {
-                'departure_airport': location.state['d_airport'],
-                'arrival_airport': location.state['ar_airport'],
-                'max_transits': location.state['max_transits'],
-                'departure_date': location.state['dep_date1'],
-                'fare_condition': location.state['fare_con'],
-                'num_of_passengers': location.state['num_pass']
-            }
-            const request = await axios.get(
-                url
-            ).then(
-                res => {
-                    setResponse(res.data.positions);
-                    setStateRes(true);
-                }
-            ).catch(
-                (error)=>{
-                    if(error.response.status === 403) {
-
-                    }
-                    if(error.response.status === 402) {
-
-                    }
-                    console.log('error')
-                }
-            )
-
-        }
-
         const [selected, setSelected] = useState('');
 
         const handleChange = event => {
             setSelected(event.target.value);
         };
-
-        if(state_res === false) {
-            FlightsRequest()
-            console.log(response);
-        }
 
         return (
             <div className="SecondPart_">
