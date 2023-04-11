@@ -52,6 +52,8 @@ export default function SecondPage() {
 
         const [response, setResponse] = useState();
 
+        const [state_res, setStateRes] = useState(false);
+
         const settings = {
             className: "center",
             centerMode: true,
@@ -72,16 +74,12 @@ export default function SecondPage() {
                 'fare_condition': location.state['fare_con'],
                 'num_of_passengers': location.state['num_pass']
             }
-            let headers = {headers: {
-                'Access-Control-Allow-Origin' : '*',
-                'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS'
-            }}
-            const request = await axios.post(
-                url,
-                data
+            const request = await axios.get(
+                url
             ).then(
                 res => {
                     setResponse(res.data.positions);
+                    setStateRes(true);
                 }
             ).catch(
                 (error)=>{
@@ -103,8 +101,10 @@ export default function SecondPage() {
             setSelected(event.target.value);
         };
 
-        FlightsRequest();
-        console.log(response);
+        if(state_res === false) {
+            FlightsRequest()
+            console.log(response);
+        }
 
         return (
             <div className="SecondPart_">
