@@ -6,6 +6,8 @@ import './FirstPage.css'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Contacts from "../Contacts/Contacts";
+import { useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 export default function FirstPage() {
 
@@ -22,6 +24,42 @@ export default function FirstPage() {
    function MenuPart() {
 
         const [part, setPart] = useState(0);
+        const [stateNavigation, setStateNav] = useState(false);
+        const handleChangeNav = event => {
+            setStateNav(true);
+        };
+
+        const [d_airport, setDAirport] = useState("");
+        const [ar_airport, setARAirport] = useState("");
+        const [max_transits, setMTransits] = useState(2);
+        const [dep_date1, setDepDate1] = useState();
+        const [dep_date2, setDepDate2] = useState();
+        const [fare_con, setFCon] = useState("Economy");
+        const [num_pass, setNumPass] = useState(1);
+
+        const handleChangeDAirport = event => {
+            setDAirport(event.target.value);
+        };
+        const handleChangeARAirport = event => {
+            setARAirport(event.target.value);
+        };
+        const handleChangeMTransits = event => {
+            setMTransits(event.target.value);
+        };
+        const handleChangeDepDate1 = event => {
+            setDepDate1(event.target.value);
+        };
+        const handleChangeDepDate2 = event => {
+            setDepDate2(event.target.value);
+        };
+        const handleChangeFCon = event => {
+            setFCon(event.target.value);
+        };
+        const handleChangeNumPass = event => {
+            setNumPass(event.target.value);
+        };
+
+        const navigate = useNavigate();
 
         const Click = (n) => {
             console.log("Click good!!!");
@@ -43,22 +81,31 @@ export default function FirstPage() {
                         <div className="Form1">
                             <br/>
                             <div className="Form1Part1">
-                                <input className='input0' type='text' placeholder="Откуда"/>
-                                <input className='input1' type='text' placeholder="Куда"/>
+                                <input className='input0' type='text' placeholder="Откуда" value={d_airport} onChange={handleChangeDAirport} />
+                                <input className='input1' type='text' placeholder="Куда" value={ar_airport} onChange={handleChangeARAirport}/>
                                 <div className='tuda'></div>
-                                <input className='input2' type="date" id="date" name="date"/>
+                                <input className='input2' type="date" id="date" name="date" value={dep_date1} onChange={handleChangeDepDate1}/>
                                 <div className='obratno'></div>
-                                <input className='input3' type="date" id="date" name="date"/>
+                                <input className='input3' type="date" id="date" name="date" value={dep_date2} onChange={handleChangeDepDate2}/>
                             </div>
                             <div className="Form1Part2">
-                                <input className='input4' type='text' placeholder="Кол-во билетов"/>
-                                <select className='input5'>
+                                <input className='input4' type='text' placeholder="Кол-во билетов" value={num_pass} onChange={handleChangeNumPass}/>
+                                <select className='input5' value={fare_con} onChange={handleChangeFCon}>
                                     <option className='Option' value="economy">Эконом</option>
                                     <option className='Option' value="business">Бизнес</option>
                                 </select>
                             </div>
                             <div className="Button">
-                                <a href="" className="gradient-button">Найти</a>
+                                <a className="gradient-button" onClick={handleChangeNav}>Найти</a>
+                                {stateNavigation && <Navigate className to="/flights_result" state={new Map([
+                                    ['d_airport', d_airport],
+                                    ['ar_airport', ar_airport],
+                                    ['max_transits', max_transits],
+                                    ['dep_date1', dep_date1],
+                                    ['dep_date2', dep_date2],
+                                    ['fare_con', fare_con],
+                                    ['num_pass', num_pass]
+                                ])} replace={true}/>}
                             </div>
                         </div>
                     </div>

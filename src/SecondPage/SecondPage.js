@@ -5,8 +5,12 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./SecondPage.css";
 import Contacts from "../Contacts/Contacts";
+import {useLocation} from "react-router-dom";
+import axios from "axios";
 
 export default function SecondPage() {
+    const location = useLocation();
+
     function FirstPart(otkuda, kuda, date1, date2, k_bil, Class) {
         const [selected, setSelected] = useState('');
 
@@ -46,6 +50,8 @@ export default function SecondPage() {
         let months = ["Января", "Февраля", "Марта", "Апреля", "Мая", "Июня",
                       "Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря"];
 
+        const [response, setResponse] = useState();
+
         const settings = {
             className: "center",
             centerMode: true,
@@ -56,11 +62,49 @@ export default function SecondPage() {
             speed: 500
         };
 
+        const FlightsRequest = async () => {
+            let url = 'http://95.165.11.56:7654/' + 'flights';
+            let data = {
+                'departure_airport': location.state['d_airport'],
+                'arrival_airport': location.state['ar_airport'],
+                'max_transits': location.state['max_transits'],
+                'departure_date': location.state['dep_date1'],
+                'fare_condition': location.state['fare_con'],
+                'num_of_passengers': location.state['num_pass']
+            }
+            let headers = {headers: {
+                'Access-Control-Allow-Origin' : '*',
+                'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS'
+            }}
+            const request = await axios.post(
+                url,
+                data
+            ).then(
+                res => {
+                    setResponse(res.data.positions);
+                }
+            ).catch(
+                (error)=>{
+                    if(error.response.status === 403) {
+
+                    }
+                    if(error.response.status === 402) {
+
+                    }
+                    console.log('error')
+                }
+            )
+
+        }
+
         const [selected, setSelected] = useState('');
 
         const handleChange = event => {
             setSelected(event.target.value);
         };
+
+        FlightsRequest();
+        console.log(response);
 
         return (
             <div className="SecondPart_">
@@ -80,10 +124,17 @@ export default function SecondPage() {
                         <option className='TextOption' value="business">Убыванию</option>
                     </select>
                 </div>
-                {FlightCard()}
-                {FlightCard()}
+                {AllFlights(4)}
             </div>
         )
+    }
+
+    function AllFlights(n) {
+        const cards = [];
+        for(let i = 0; i < n; i++) {
+            cards.push(FlightCard());
+        }
+        return cards;
     }
 
     function FlightCard() {
@@ -126,7 +177,7 @@ export default function SecondPage() {
 
     return (
         <div className="App_">
-            {FirstPart("Москва", "Тверь", "21.01.2023", "25.01.2023", 3, "Эконом")}
+            {FirstPart(location.state.get('d_airport'), location.state.get('ar_airport'), location.state.get('dep_date1'), location.state.get('dep_date2'), location.state.get('num_pass'), location.state.get('fare_con'))}
             {FlightTo("Москва", "Тверь", "16.02.2012", 1, "туда", "Эконом")}
             {FlightTo("Москва", "Тверь", "16.02.2012", 1, "обратно", "Эконом")}
             <Contacts/>
