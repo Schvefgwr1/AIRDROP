@@ -141,7 +141,11 @@ export default function SecondPage() {
         ).catch(
             (error)=>{
                 console.log('error');
-                setState('error');
+                console.log(error);
+                console.log(location.state);
+                if(error.response.status === 422) {
+                    setState('error');
+                }
             }
         )
     }
@@ -342,8 +346,12 @@ export default function SecondPage() {
             )
         case 'error':
             return (
-                <div>
-                    <h2>Error</h2>
+                <div className="FirstPart">
+                    <img src={logo} className="App-logo" alt="logo" />
+                    <h2 className="Zag_err">Введены неправильные данные</h2>
+                    <div className="Button_1">
+                        <a href="/" className="gradient-button_" onClick={() => setLoad(1)}>Вернуться на стартовую страницу</a>
+                    </div>
                 </div>
             )
     }

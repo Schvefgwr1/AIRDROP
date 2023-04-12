@@ -29,8 +29,8 @@ export default function FirstPage() {
             setStateNav(true);
         };
 
-        const [d_airport, setDAirport] = useState("");
-        const [ar_airport, setARAirport] = useState("");
+        const [d_airport, setDAirport] = useState();
+        const [ar_airport, setARAirport] = useState();
         const [max_transits, setMTransits] = useState(2);
         const [dep_date1, setDepDate1] = useState();
         const [dep_date2, setDepDate2] = useState();
