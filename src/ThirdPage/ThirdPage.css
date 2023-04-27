@@ -1,0 +1,253 @@
+.MiniText {
+    margin-top: 5%;
+    margin-left: 10%;
+    font-size: 30px;
+    line-height: 50px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.FlightCard_ {
+    margin-left: 10%;
+    height: 200px;
+    width: 80%;
+    border: 2px solid #E4BAF8;
+    border-radius: 10px/10px;
+    margin-top: 50px;
+}
+
+.DateBlock {
+    position: relative;
+    top: 12%;
+    left: 2%;
+    height: 80%;
+    width: 20%;
+    background-color: #E4BAF8;
+    border-radius: 40px/40px;
+    display: inline-block;
+}
+
+.DateBlock div {
+    text-align: center;
+}
+.Date_1 {
+    color: #847d7d;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+}
+.Date_2 {
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 600;
+}
+.Date_3 {
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.TextInformation_ {
+    position: relative;
+    top: 8%;
+    left: 5%;
+    height: 80%;
+    width: 50%;
+    display: inline-block;
+    background-color: #ffffff;
+}
+
+.TextPeresadki_ {
+    text-align: right;
+    font-weight: 550;
+    font-size: 24px;
+}
+
+.TextInf_ {
+    text-align: center;
+    font-weight: 550;
+    font-size: 24px;
+}
+
+.Block1_ {
+    position: relative;
+    left: 8%;
+    bottom: 10%;
+    height: 80%;
+    width: 20%;
+    border-radius: 30px/30px;
+    background-color: #f3f3f3;
+    display: inline-block;
+}
+
+.BlockText_ {
+    text-align: center;
+    font-weight: 550;
+    font-size: 24px;
+    position: relative;
+    top: 14%;
+}
+
+.ThirdPart {
+    height: 400px;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5%;
+}
+
+.DescriptionClass {
+    display: inline-block;
+    width: 70%;
+    height: 100%;
+}
+.DescriptionClass text {
+    font-weight: 600;
+    font-size: 40px;
+}
+.PhotoLogo {
+    margin-top: 10%;
+    border-radius: 70px/70px;
+    width: 300px;
+    height: 61px;
+    background-image: url("../Photos/comf_logo.png");
+    background-size: 100%;
+}
+.PhotoAirBus {
+    background-image: url("../Photos/Air_bus_class.png");
+    background-size: 115%;
+    width: 50%;
+    height: 68%;
+    border-radius: 80px/80px;
+    margin-left: 50%;
+    margin-top: -25%;
+}
+.Buy {
+    position: relative;
+    bottom: 10%;
+    height: 100%;
+    width: 30%;
+    display: inline-block;
+}
+
+.BuyBlock {
+    width: 90%;
+    margin-left: 10%;
+    height: 90%;
+    background-color: #f3f3f3;
+    border-radius: 40px/40px;
+}
+.BuyText {
+    text-align: center;
+    font-weight: 550;
+    font-size: 28px;
+    position: relative;
+    top: 20%;
+}
+.BuyButton {
+    width: 80%;
+    height: 15%;
+    position: relative;
+    top: 60%;
+    left: 10%;
+    background-color: #E4BAF8;
+    border-radius: 40px/40px;
+}
+
+.TextButton_ {
+    position: relative;
+    top: 15%;
+    text-align: center;
+    font-weight: 600;
+    font-size: 24px;
+}
+.Test {
+    height: 30%;
+    width: 30%;
+}
+
+.MiniText_ {
+    margin-top: 2%;
+    margin-left: 10%;
+    font-size: 40px;
+    line-height: 50px;
+    font-style: normal;
+    font-weight: 700;
+}
+.InputBlock {
+    margin-left: 10%;
+    height: 300px;
+    width: 80%;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #E4BAF8;
+    border-radius: 30px/30px;
+    margin-bottom: 5%;
+    display: flex;
+}
+.InputPersonal1 {
+    width: 97%;
+    height: 60px;
+    margin-top: 5%;
+    margin-left: 3%;
+    border-style: none;
+    border-width: 0px;
+    border-radius: 50px/50px;
+    color: #050404;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-align: center;
+    background-color: #f3f3f3;
+}
+.InputPersonal1::-webkit-input-placeholder {
+    color: #050404;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-align: center;
+}
+.InputPersonal2 {
+    width: 94%;
+    height: 60px;
+    margin-top: 5%;
+    margin-left: 3%;
+    border-style: none;
+    border-radius: 50px/50px;
+    color: #050404;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-align: center;
+    background-color: #f3f3f3;
+}
+.InputPersonal2::-webkit-input-placeholder {
+    color: #050404;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-align: center;
+}
+.FirstPartInputs {
+    height: 100%;
+    width: 50%;
+}
+.SecondPartInputs {
+    height: 100%;
+    width: 50%;
+}
+.ButtonDiv {
+    margin-left: 3%;
+    margin-top: 5%;
+    width: 94%;
+    height: 156px;
+    background-color: #E4BAF8;
+    border-radius: 50px/50px;
+    display: flex;
+}
+.TextButton2 {
+    height: 90%;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 3%;
+    text-align: center;
+    font-weight: 600;
+    font-size: 30px;
+}

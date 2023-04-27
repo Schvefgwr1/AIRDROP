@@ -1,4 +1,32 @@
-import React, {Component, useEffect} from "react";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: SecondPage.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: SecondPage.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, {Component, useEffect} from "react";
 import { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -73,27 +101,27 @@ function SecondPage() {
     function FirstPart() {
 
         return (
-            <div className="FirstPart_">
-                <div className="Inputs">
-                    <input className='input0_' type='text' placeholder={d_airport} value={d_airport} onChange={handleChangeDAirport}/>
-                    <input className='input1_' type='text' placeholder={ar_airport} value={ar_airport} onChange={handleChangeARAirport}/>
-                    <div className='tuda_'></div>
-                    <input placeholder={dep_date1} className="input2_" type="date" value={dep_date1} onChange={handleChangeDepDate1} required/>
-                    <div className='obratno_'></div>
-                    <input placeholder={dep_date2} className="input3_" type="date" value={dep_date2} onChange={handleChangeDepDate2} required/>
-                    <input className='input4_' type='text' placeholder={"Количество " + num_pass} value={num_pass} onChange={handleChangeNumPass}/>
-                    <select className='input5_' value={fare_con} onChange={handleChangeFCon}>
-                        <option disabled={true} value="">
+            &lt;div className="FirstPart_">
+                &lt;div className="Inputs">
+                    &lt;input className='input0_' type='text' placeholder={d_airport} value={d_airport} onChange={handleChangeDAirport}/>
+                    &lt;input className='input1_' type='text' placeholder={ar_airport} value={ar_airport} onChange={handleChangeARAirport}/>
+                    &lt;div className='tuda_'>&lt;/div>
+                    &lt;input placeholder={dep_date1} className="input2_" type="date" value={dep_date1} onChange={handleChangeDepDate1} required/>
+                    &lt;div className='obratno_'>&lt;/div>
+                    &lt;input placeholder={dep_date2} className="input3_" type="date" value={dep_date2} onChange={handleChangeDepDate2} required/>
+                    &lt;input className='input4_' type='text' placeholder={"Количество " + num_pass} value={num_pass} onChange={handleChangeNumPass}/>
+                    &lt;select className='input5_' value={fare_con} onChange={handleChangeFCon}>
+                        &lt;option disabled={true} value="">
                             {fare_con}
-                        </option>
-                        <option className='Option' value="Economy">Эконом</option>
-                        <option className='Option' value="Business">Бизнес</option>
-                    </select>
-                </div>
-                <div className="Button_">
-                    <a className="gradient-button_" onClick={() => setLoad(1)}>Найти</a>
-                </div>
-            </div>
+                        &lt;/option>
+                        &lt;option className='Option' value="Economy">Эконом&lt;/option>
+                        &lt;option className='Option' value="Business">Бизнес&lt;/option>
+                    &lt;/select>
+                &lt;/div>
+                &lt;div className="Button_">
+                    &lt;a className="gradient-button_" onClick={() => setLoad(1)}>Найти&lt;/a>
+                &lt;/div>
+            &lt;/div>
         )
     }
 
@@ -103,8 +131,8 @@ function SecondPage() {
 
     /**
      * Request for flights
-     * @param {number}resp_number - Response with road to or road back
-     * @returns {Promise<void>}
+     * @param resp_number
+     * @returns {Promise&lt;void>}
      * @constructor
      */
 
@@ -139,7 +167,7 @@ function SecondPage() {
                 body += 'T00:00:00.000000'
             }
             if(key !== 'num_of_passengers') {
-                body += '&';
+                body += '&amp;';
             }
         }
         setStateUse(state_use + 1);
@@ -200,12 +228,12 @@ function SecondPage() {
 
     /**
      * Output on display variants of flights by one route
-     * @param {string}otkuda - Departure airport
-     * @param {string}kuda - Arrival airport
-     * @param {string}date - Date of flight in string format
-     * @param {number}k_bil - Number of tickets
-     * @param {string}option - Class of flight
-     * @param {number}part  - Flight to or back
+     * @param otkuda
+     * @param kuda
+     * @param date
+     * @param k_bil
+     * @param option
+     * @param part
      * @returns {JSX.Element}
      * @constructor
      */
@@ -234,39 +262,39 @@ function SecondPage() {
         };
 
         return (
-            <div className="SecondPart_">
-                <div>
-                    <div className="TextFlight">
-                        <h2>Выберите ближайший перелет {option}: {days[MyDate.getDay()]}, {MyDate.getDate()} {months[MyDate.getMonth()]}</h2>
-                        <h2>{otkuda} &#8594; {kuda}</h2>
-                    </div>
+            &lt;div className="SecondPart_">
+                &lt;div>
+                    &lt;div className="TextFlight">
+                        &lt;h2>Выберите ближайший перелет {option}: {days[MyDate.getDay()]}, {MyDate.getDate()} {months[MyDate.getMonth()]}&lt;/h2>
+                        &lt;h2>{otkuda} &amp;#8594; {kuda}&lt;/h2>
+                    &lt;/div>
 
-                </div>
-                <div className="Options">
-                    <select className='Sort' value={selected} onChange={handleChange}>
-                        <option disabled={true} value="">
+                &lt;/div>
+                &lt;div className="Options">
+                    &lt;select className='Sort' value={selected} onChange={handleChange}>
+                        &lt;option disabled={true} value="">
                             Сортировать по
-                        </option>
-                        <option className='TextOption' value="economy">Возрастанию</option>
-                        <option className='TextOption' value="business">Убыванию</option>
-                    </select>
-                </div>
+                        &lt;/option>
+                        &lt;option className='TextOption' value="economy">Возрастанию&lt;/option>
+                        &lt;option className='TextOption' value="business">Убыванию&lt;/option>
+                    &lt;/select>
+                &lt;/div>
                 {AllFlights(res, part)}
-            </div>
+            &lt;/div>
         )
     }
 
     /**
      * Flights in one route
-     * @param {Array.<Object>}result - Variable to store response
-     * @param {number}part - Flight to or back
+     * @param result
+     * @param part
      * @returns {JSX.Element}
      * @constructor
      */
 
     function AllFlights(result, part) {
         const cards = [];
-        for(let i = 0; i < result.length; i++) {
+        for(let i = 0; i &lt; result.length; i++) {
             cards.push(FlightCard(result[i], part, i));
         }
         return cards;
@@ -285,9 +313,9 @@ function SecondPage() {
 
     /**
      * One flight by route
-     * @param {Object}road - Flight from departure airport to arrival airport
-     * @param {number}part -  Flight to or back
-     * @param {number}number - Number of flight in Array of Objects
+     * @param road
+     * @param part
+     * @param number
      * @returns {JSX.Element}
      * @constructor
      */
@@ -319,36 +347,36 @@ function SecondPage() {
 
         function getPoint() {
             return (
-                <text>
-                    &nbsp; &#8226;
-                </text>
+                &lt;text>
+                    &amp;nbsp; &amp;#8226;
+                &lt;/text>
             )
         }
 
         function ots() {
             const points = [];
             if(road?.flights.length === 1) {
-                for(let i = 0; i < 13; i++)
+                for(let i = 0; i &lt; 13; i++)
                     points.push(getPoint());
             }
             if(road?.flights.length === 2) {
-                for(let i = 0; i < 5; i++)
+                for(let i = 0; i &lt; 5; i++)
                     points.push(getPoint());
-                points.push(<text> &nbsp; {road?.flights[0]?.arrival_airport}</text>);
-                for(let i = 0; i < 5; i++)
+                points.push(&lt;text> &amp;nbsp; {road?.flights[0]?.arrival_airport}&lt;/text>);
+                for(let i = 0; i &lt; 5; i++)
                     points.push(getPoint());
             }
             if(road?.flights.length === 3) {
-                for(let i = 0; i < 3; i++)
+                for(let i = 0; i &lt; 3; i++)
                     points.push(getPoint());
-                points.push(<text> &nbsp; {road?.flights[0]?.arrival_airport + getPoint()} &nbsp; {road?.flights[1]?.arrival_airport}</text>);
-                for(let i = 0; i < 3; i++)
+                points.push(&lt;text> &amp;nbsp; {road?.flights[0]?.arrival_airport + getPoint()} &amp;nbsp; {road?.flights[1]?.arrival_airport}&lt;/text>);
+                for(let i = 0; i &lt; 3; i++)
                     points.push(getPoint());
             }
             return (
-                <text className="Points">
-                    {points} &nbsp;
-                </text>
+                &lt;text className="Points">
+                    {points} &amp;nbsp;
+                &lt;/text>
             )
         }
 
@@ -363,45 +391,45 @@ function SecondPage() {
         //'2023-04-18T19:20:00+03:00'
         //"8:25:00"
         return (
-            <div className="FlightCard">
-                <div className="TextInformation">
-                    <div className="TextPeresadki">
+            &lt;div className="FlightCard">
+                &lt;div className="TextInformation">
+                    &lt;div className="TextPeresadki">
                         {peres}
-                    </div>
-                    <div className="TextInf">
+                    &lt;/div>
+                    &lt;div className="TextInf">
                         {road?.flights[0]?.scheduled_departure.substring(11, 16)} {road?.flights[0]?.departure_airport}
                         {ots()}
                         {road?.flights[road?.flights?.length - 1]?.arrival_airport} {road?.flights[road?.flights?.length - 1]?.scheduled_arrival.substring(11, 16)}
-                        <br/>
-                        <br/>
-                        {date_dep.getDate()} {months[date_dep.getMonth()]}, {days[date_dep.getDay()] + " "}  &#8226;
-                        в пути {times} ч:мин  &#8226;
+                        &lt;br/>
+                        &lt;br/>
+                        {date_dep.getDate()} {months[date_dep.getMonth()]}, {days[date_dep.getDay()] + " "}  &amp;#8226;
+                        в пути {times} ч:мин  &amp;#8226;
                         {" " + date_ar.getDate()} {months[date_ar.getMonth()]}, {days[date_ar.getDay()] + " "}
-                    </div>
-                </div>
-                <div className={style} onClick={() => SetFlights(part, number)}>
-                    <div className="BlockText">
+                    &lt;/div>
+                &lt;/div>
+                &lt;div className={style} onClick={() => SetFlights(part, number)}>
+                    &lt;div className="BlockText">
                         {Class} базовый
-                        <br/>
-                        <br/>
+                        &lt;br/>
+                        &lt;br/>
                         {road?.cost} РУБ.
-                    </div>
-                </div>
-                <div className="Block2">
-                    <div className="BlockText">
+                    &lt;/div>
+                &lt;/div>
+                &lt;div className="Block2">
+                    &lt;div className="BlockText">
                         {Class} стандарт
-                        <br/>
-                        <br/>
+                        &lt;br/>
+                        &lt;br/>
                         {road?.cost} РУБ.
-                    </div>
-                </div>
-            </div>
+                    &lt;/div>
+                &lt;/div>
+            &lt;/div>
         )
     }
 
     const [navigation, setNavigation] = useState(false);
     const handleChangeNavigation = event => {
-        if(clicks.click1 === true && clicks.click2 === true) {
+        if(clicks.click1 === true &amp;&amp; clicks.click2 === true) {
             setNavigation(true);
         }
     }
@@ -414,17 +442,17 @@ function SecondPage() {
 
     function NavigationButton() {
         return (
-            <div className="NavigationLine" onClick={handleChangeNavigation}>
-                {navigation && <Navigate className to="/buy_tickets" state={new Map([
+            &lt;div className="NavigationLine" onClick={handleChangeNavigation}>
+                {navigation &amp;&amp; &lt;Navigate className to="/buy_tickets" state={new Map([
                         ['ticket1', flight1],
                         ['ticket2', flight2]
                     ])} replace={true}/>}
-                <div className="NavigationButton">
-                    <div className="TextNavigation">
+                &lt;div className="NavigationButton">
+                    &lt;div className="TextNavigation">
                         ЗАКАЗАТЬ
-                    </div>
-                </div>
-            </div>
+                    &lt;/div>
+                &lt;/div>
+            &lt;/div>
         )
     }
 
@@ -436,39 +464,61 @@ function SecondPage() {
 
     function MainContent() {
         return (
-            <div className="App_">
+            &lt;div className="App_">
                 {FirstPart()}
                 {FlightTo(d_airport, ar_airport, dep_date1, num_pass, "туда", 1)}
                 {FlightTo(ar_airport, d_airport, dep_date2, num_pass, "обратно", 2)}
                 {NavigationButton()}
-                <Contacts/>
-            </div>
+                &lt;Contacts/>
+            &lt;/div>
         )
     }
 
     switch (state) {
          case 'working':
             return (
-                <div>
+                &lt;div>
                     {MainContent()}
-                </div>
+                &lt;/div>
             )
         case 'loading':
             return(
-                <div>
+                &lt;div>
                     {FirstPart()}
-                    <img src={logo} className="App-logo" alt="logo" />
-                </div>
+                    &lt;img src={logo} className="App-logo" alt="logo" />
+                &lt;/div>
             )
         case 'error':
             return (
-                <div className="FirstPart">
-                    <img src={logo} className="App-logo" alt="logo" />
-                    <h2 className="Zag_err">Введены неправильные данные</h2>
-                    <div className="Button_1">
-                        <a href="/" className="gradient-button_" onClick={() => setLoad(1)}>Вернуться на стартовую страницу</a>
-                    </div>
-                </div>
+                &lt;div className="FirstPart">
+                    &lt;img src={logo} className="App-logo" alt="logo" />
+                    &lt;h2 className="Zag_err">Введены неправильные данные&lt;/h2>
+                    &lt;div className="Button_1">
+                        &lt;a href="/" className="gradient-button_" onClick={() => setLoad(1)}>Вернуться на стартовую страницу&lt;/a>
+                    &lt;/div>
+                &lt;/div>
             )
     }
-}
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="SecondPage.html">SecondPage</a></li><li><a href="SecondPage-AllFlights.html">AllFlights</a></li><li><a href="SecondPage-FirstPart.html">FirstPart</a></li><li><a href="SecondPage-FlightCard.html">FlightCard</a></li><li><a href="SecondPage-FlightTo.html">FlightTo</a></li><li><a href="SecondPage-FlightsRequest.html">FlightsRequest</a></li><li><a href="SecondPage-MainContent.html">MainContent</a></li><li><a href="SecondPage-NavigationButton.html">NavigationButton</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Wed Apr 26 2023 17:04:38 GMT+0300 (Москва, стандартное время)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: FirstPage.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: FirstPage.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React from "react";
+import { useState } from "react";
+import Slider from "react-slick";
+import "../Contacts/Contacts"
+import './FirstPage.css'
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Contacts from "../Contacts/Contacts";
+import { useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
+
+export default
+
+/**
+ * The main page
+ * @returns {JSX.Element}
+ * @constructor
+ */
+
+function FirstPage() {
+
+    const settings2 = {
+        className: "center",
+        centerMode: true,
+        infinite: true,
+        centerPadding: "60px",
+        slidesToShow: 3,
+        speed: 500,
+        autoplaySpeed: 50
+    };
+
+    /**
+     * Functions of web-site in main page
+     * @returns {JSX.Element}
+     * @constructor
+     */
+
+   function MenuPart() {
+
+        const [part, setPart] = useState(0);
+        const [stateNavigation, setStateNav] = useState(false);
+        const handleChangeNav = event => {
+            setStateNav(true);
+        };
+
+        const [d_airport, setDAirport] = useState();
+        const [ar_airport, setARAirport] = useState();
+        const [max_transits, setMTransits] = useState(2);
+        const [dep_date1, setDepDate1] = useState();
+        const [dep_date2, setDepDate2] = useState();
+        const [fare_con, setFCon] = useState("Economy");
+        const [num_pass, setNumPass] = useState(1);
+
+        const handleChangeDAirport = event => {
+            setDAirport(event.target.value);
+        };
+        const handleChangeARAirport = event => {
+            setARAirport(event.target.value);
+        };
+        const handleChangeMTransits = event => {
+            setMTransits(event.target.value);
+        };
+        const handleChangeDepDate1 = event => {
+            setDepDate1(event.target.value);
+        };
+        const handleChangeDepDate2 = event => {
+            setDepDate2(event.target.value);
+        };
+        const handleChangeFCon = event => {
+            setFCon(event.target.value);
+        };
+        const handleChangeNumPass = event => {
+            setNumPass(event.target.value);
+        };
+
+        const navigate = useNavigate();
+
+        const Click = (n) => {
+            console.log("Click good!!!");
+            setPart(n);
+        }
+
+        switch (part) {
+            case 0:
+                return (
+                    &lt;div className="Menu">
+                        &lt;nav className="tabs">
+                            &lt;ul>
+                                &lt;li className="active">&lt;a>Купить билеты&lt;/a>&lt;/li>
+                                &lt;li>&lt;a onClick={event => Click(1)}>Статус рейса&lt;/a>&lt;/li>
+                                &lt;li>&lt;a onClick={event => Click(2)}>Регистрация на рейс&lt;/a>&lt;/li>
+                                &lt;li>&lt;a onClick={event => Click(3)}>Багаж&lt;/a>&lt;/li>
+                            &lt;/ul>
+                        &lt;/nav>
+                        &lt;div className="Form1">
+                            &lt;br/>
+                            &lt;div className="Form1Part1">
+                                &lt;input className='input0' type='text' placeholder="Откуда" value={d_airport} onChange={handleChangeDAirport} />
+                                &lt;input className='input1' type='text' placeholder="Куда" value={ar_airport} onChange={handleChangeARAirport}/>
+                                &lt;div className='tuda'>&lt;/div>
+                                &lt;input className='input2' type="date" id="date" name="date" value={dep_date1} onChange={handleChangeDepDate1}/>
+                                &lt;div className='obratno'>&lt;/div>
+                                &lt;input className='input3' type="date" id="date" name="date" value={dep_date2} onChange={handleChangeDepDate2}/>
+                            &lt;/div>
+                            &lt;div className="Form1Part2">
+                                &lt;input className='input4' type='text' placeholder="Кол-во билетов" value={num_pass} onChange={handleChangeNumPass}/>
+                                &lt;select className='input5' value={fare_con} onChange={handleChangeFCon}>
+                                    &lt;option className='Option' value="Economy">Эконом&lt;/option>
+                                    &lt;option className='Option' value="Business">Бизнес&lt;/option>
+                                &lt;/select>
+                            &lt;/div>
+                            &lt;div className="Button">
+                                &lt;a className="gradient-button" onClick={handleChangeNav}>Найти&lt;/a>
+                                {stateNavigation &amp;&amp; &lt;Navigate className to="/flights_result" state={new Map([
+                                    ['d_airport', d_airport],
+                                    ['ar_airport', ar_airport],
+                                    ['max_transits', max_transits],
+                                    ['dep_date1', dep_date1],
+                                    ['dep_date2', dep_date2],
+                                    ['fare_con', fare_con],
+                                    ['num_pass', num_pass]
+                                ])} replace={true}/>}
+                            &lt;/div>
+                        &lt;/div>
+                    &lt;/div>
+                )
+            case 1:
+                return (
+                    &lt;div className="Menu">
+                        &lt;nav className="tabs">
+                            &lt;ul>
+                                &lt;li>&lt;a onClick={event => Click(0)}>Купить билеты&lt;/a>&lt;/li>
+                                &lt;li className="active">&lt;a>Статус рейса&lt;/a>&lt;/li>
+                                &lt;li>&lt;a onClick={event => Click(2)}>Регистрация на рейс&lt;/a>&lt;/li>
+                                &lt;li>&lt;a onClick={event => Click(3)}>Багаж&lt;/a>&lt;/li>
+                            &lt;/ul>
+                        &lt;/nav>
+                        &lt;div className="Form1">
+                            &lt;br/>
+                            &lt;input className='input6' type='text' placeholder="Номер рейса"/>
+                            &lt;div className='tuda2'>&lt;/div>
+                            &lt;input className='input7' type="date" id="date" name="date"/>
+                            &lt;div className="Button2">
+                                &lt;a href="" className="gradient-button">Найти&lt;/a>
+                            &lt;/div>
+                        &lt;/div>
+                    &lt;/div>
+                )
+            case 2:
+                return (
+                    &lt;div className="Menu">
+                        &lt;nav className="tabs">
+                            &lt;ul>
+                                &lt;li>&lt;a onClick={event => Click(0)}>Купить билеты&lt;/a>&lt;/li>
+                                &lt;li>&lt;a onClick={event => Click(1)}>Статус рейса&lt;/a>&lt;/li>
+                                &lt;li className="active">&lt;a>Регистрация на рейс&lt;/a>&lt;/li>
+                                &lt;li>&lt;a onClick={event => Click(3)}>Багаж&lt;/a>&lt;/li>
+                            &lt;/ul>
+                        &lt;/nav>
+                        &lt;div className="Form1">
+                            &lt;br/>
+                            &lt;input className='input8' type='text' placeholder="Фамилия пассажира (латиницой)"/>
+                            &lt;input className='input9' type='text' placeholder='Номер заказа (брони)'/>
+                            &lt;div className="Button2">
+                                &lt;a href="" className="gradient-button">Найти&lt;/a>
+                            &lt;/div>
+                        &lt;/div>
+                    &lt;/div>
+                )
+            case 3:
+                return (
+                    &lt;div className="Menu">
+                        &lt;nav className="tabs">
+                            &lt;ul>
+                                &lt;li>&lt;a onClick={event => Click(0)}>Купить билеты&lt;/a>&lt;/li>
+                                &lt;li>&lt;a onClick={event => Click(1)}>Статус рейса&lt;/a>&lt;/li>
+                                &lt;li>&lt;a onClick={event => Click(2)}>Регистрация на рейс&lt;/a>&lt;/li>
+                                &lt;li className="active">&lt;a>Мои бронирования&lt;/a>&lt;/li>
+                            &lt;/ul>
+                        &lt;/nav>
+                        &lt;div className='Form1'>
+                            &lt;input className='input10' type='text' placeholder='Номер заказа (брони)'/>
+                            &lt;div className="Button2">
+                                &lt;a href="" className="gradient-button">Найти&lt;/a>
+                            &lt;/div>
+                        &lt;/div>
+                    &lt;/div>
+                )
+        }
+    }
+
+    return (
+        &lt;div className="App">
+            &lt;div>
+
+                &lt;div className="FirstPart">
+                    {MenuPart()}
+                &lt;/div>
+
+                &lt;div className="About">
+                    &lt;h1>О КОМПАНИИ&lt;/h1>
+                    &lt;div className="TextAbout">
+                        &lt;div>AirWorld - это авиакомпания, которая предлагает международные и внутренние авиарейсы
+                            для пассажиров, желающих путешествовать по всему миру. Компания имеет сильный флот,
+                            состоящий из современных самолетов различных моделей, которые обеспечивают максимальный
+                            комфорт и безопасность во время полета.
+                            AirWorld предлагает широкий спектр услуг, включая экономичные и бизнес-классы
+                            обслуживания, а также премиум-класс для пассажиров, которые ищут наивысший уровень
+                            комфорта и сервиса. Компания также предоставляет бесплатный Wi-Fi и развлечения во время
+                            полета, включая фильмы, телешоу и музыку.
+                        &lt;/div>
+                        &lt;br>&lt;/br>
+                        &lt;div>AirWorld уделяет большое внимание безопасности и техническому состоянию своих
+                            самолетов, проводя регулярное техническое обслуживание и проверку каждого самолета перед
+                            вылетом. Компания также имеет опытных пилотов и команду профессиональных
+                            бортпроводников, которые готовы оказать помощь и поддержку пассажирам на протяжении
+                            всего полета.
+                        &lt;/div>
+                        &lt;br>&lt;/br>
+                        &lt;div>AirWorld предлагает удобные варианты бронирования билетов через свой сайт или мобильное
+                            приложение, где пассажиры могут выбрать свой маршрут, удобное время вылета и класс
+                            обслуживания. Компания также предоставляет услуги по оформлению виз и багажа для
+                            пассажиров, чтобы сделать путешествие как можно более комфортным и безопасным.
+                            AirWorld стремится предоставить лучший опыт полета для своих пассажиров и сделать их
+                            путешествие приятным и комфортным.
+                        &lt;/div>
+                    &lt;/div>
+
+                    &lt;Slider {...settings2} className="Slider2">
+                        &lt;div className="City1">
+                            &lt;h2>Стамбул&lt;/h2>
+                            &lt;div>от 9999руб.&lt;/div>
+                        &lt;/div>
+                        &lt;div className="City2">
+                            &lt;h2>Рим&lt;/h2>
+                            &lt;div>от 9999руб.&lt;/div>
+                        &lt;/div>
+                        &lt;div className="City3">
+                            &lt;h2>Берлин&lt;/h2>
+                            &lt;div>от 9999руб.&lt;/div>
+                        &lt;/div>
+                        &lt;div className="City4">
+                            &lt;h2>Париж&lt;/h2>
+                            &lt;div>от 9999руб.&lt;/div>
+                        &lt;/div>
+                        &lt;div className="City5">
+                            &lt;h2>Аллепо&lt;/h2>
+                            &lt;div>от 9999руб.&lt;/div>
+                        &lt;/div>
+                        &lt;div className="City6">
+                            &lt;h2>Мариуполь&lt;/h2>
+                            &lt;div>от 9999руб.&lt;/div>
+                        &lt;/div>
+                    &lt;/Slider>
+
+                    &lt;Contacts/>
+                &lt;/div>
+            &lt;/div>
+        &lt;/div>
+    );
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="FirstPage.html">FirstPage</a></li><li><a href="FirstPage-MenuPart.html">MenuPart</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Wed Apr 26 2023 17:02:34 GMT+0300 (Москва, стандартное время)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

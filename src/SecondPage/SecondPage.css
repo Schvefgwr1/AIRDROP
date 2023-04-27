@@ -179,7 +179,19 @@ input[type="date"]:valid::before {
     border-radius: 10px/10px;
     background-color: #f3f3f3;
     display: inline-block;
-
+}
+.Block1:active {
+    background-color: #E4BAF8;
+}
+.Block1Select {
+    margin-left: 55%;
+    position: relative;
+    top: -112px;
+    height: 140px;
+    width: 20%;
+    border-radius: 10px/10px;
+    background-color: #E4BAF8;
+    display: inline-block;
 }
 
 .Block2 {
@@ -262,4 +274,30 @@ input[type="date"]:valid::before {
 .Button_1 {
     margin-top: 3%;
     margin-left: 25%;
+}
+
+.NavigationLine {
+    margin-top: 25px;
+    margin-left: 5%;
+    height: 120px;
+    width: 90%;
+}
+.NavigationButton {
+    position: relative;
+    top: 15%;
+    left: 70%;
+    height: 70%;
+    width: 30%;
+    background-color: #E4BAF8;
+    border-radius: 30px/30px;
+}
+.TextNavigation {
+    height: 50%;
+    width: 50%;
+    position: relative;
+    top: 25%;
+    left: 25%;
+    text-align: center;
+    font-weight: 550;
+    font-size: 28px;
 }

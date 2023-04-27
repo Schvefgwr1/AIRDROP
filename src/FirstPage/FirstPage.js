@@ -9,7 +9,15 @@ import Contacts from "../Contacts/Contacts";
 import { useNavigate } from "react-router-dom";
 import { Navigate } from "react-router-dom";
 
-export default function FirstPage() {
+export default
+
+/**
+ * The main page
+ * @returns {JSX.Element}
+ * @constructor
+ */
+
+function FirstPage() {
 
     const settings2 = {
         className: "center",
@@ -20,6 +28,12 @@ export default function FirstPage() {
         speed: 500,
         autoplaySpeed: 50
     };
+
+    /**
+     * Functions of web-site in main page
+     * @returns {JSX.Element}
+     * @constructor
+     */
 
    function MenuPart() {
 
@@ -91,8 +105,8 @@ export default function FirstPage() {
                             <div className="Form1Part2">
                                 <input className='input4' type='text' placeholder="Кол-во билетов" value={num_pass} onChange={handleChangeNumPass}/>
                                 <select className='input5' value={fare_con} onChange={handleChangeFCon}>
-                                    <option className='Option' value="economy">Эконом</option>
-                                    <option className='Option' value="business">Бизнес</option>
+                                    <option className='Option' value="Economy">Эконом</option>
+                                    <option className='Option' value="Business">Бизнес</option>
                                 </select>
                             </div>
                             <div className="Button">
