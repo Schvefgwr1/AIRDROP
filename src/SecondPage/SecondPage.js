@@ -167,6 +167,7 @@ function SecondPage() {
                 if(error.response.status === 422) {
                     setState('error');
                 }
+                setState('error');
             }
         )
     }
