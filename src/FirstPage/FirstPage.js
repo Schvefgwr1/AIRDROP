@@ -80,6 +80,23 @@ function FirstPage() {
             setPart(n);
         }
 
+        const [tab_departure, setTabDeparture] = useState();
+        const [tab_arrival, setTabArrival] = useState();
+        const [tab_date, setTabDate] = useState();
+        const handleChangeTabDeparture = event => {
+            setTabDeparture(event.target.value);
+        };
+        const handleChangeTabArrival = event => {
+            setTabArrival(event.target.value);
+        };
+        const handleChangeTabDate = event => {
+            setTabDate(event.target.value);
+        };
+        const [stateNavigationTab, setStateNavigationTab] = useState(false);
+        const handleChangeStateNavigationTab = event => {
+            setStateNavigationTab(true);
+        };
+
         switch (part) {
             case 0:
                 return (
@@ -87,9 +104,9 @@ function FirstPage() {
                         <nav className="tabs">
                             <ul>
                                 <li className="active"><a>Купить билеты</a></li>
-                                <li><a onClick={event => Click(1)}>Статус рейса</a></li>
+                                <li><a onClick={event => Click(1)}>Табло рейсов</a></li>
                                 <li><a onClick={event => Click(2)}>Регистрация на рейс</a></li>
-                                <li><a onClick={event => Click(3)}>Багаж</a></li>
+                                <li><a onClick={event => Click(3)}>Мои бронирования</a></li>
                             </ul>
                         </nav>
                         <div className="Form1">
@@ -130,18 +147,24 @@ function FirstPage() {
                         <nav className="tabs">
                             <ul>
                                 <li><a onClick={event => Click(0)}>Купить билеты</a></li>
-                                <li className="active"><a>Статус рейса</a></li>
+                                <li className="active"><a>Табло рейсов</a></li>
                                 <li><a onClick={event => Click(2)}>Регистрация на рейс</a></li>
-                                <li><a onClick={event => Click(3)}>Багаж</a></li>
+                                <li><a onClick={event => Click(3)}>Мои бронирования</a></li>
                             </ul>
                         </nav>
                         <div className="Form1">
                             <br/>
-                            <input className='input6' type='text' placeholder="Номер рейса"/>
+                            <input className='input6' type='text' placeholder="Откуда" value={tab_departure} onChange={handleChangeTabDeparture}/>
+                            <input className='input6_1' type='text' placeholder="Куда" value={tab_arrival} onChange={handleChangeTabArrival}/>
                             <div className='tuda2'></div>
-                            <input className='input7' type="date" id="date" name="date"/>
+                            <input className='input7' type="date" id="date" name="date" value={tab_date} onChange={handleChangeTabDate}/>
                             <div className="Button2">
-                                <a href="" className="gradient-button">Найти</a>
+                                <a className="gradient-button" onClick={handleChangeStateNavigationTab}>Найти</a>
+                                {stateNavigationTab && <Navigate className to="/tab_flights" state={new Map([
+                                    ['d_airport', tab_departure],
+                                    ['ar_airport', tab_arrival],
+                                    ['dep_date', tab_date]
+                                ])} replace={true}/>}
                             </div>
                         </div>
                     </div>
@@ -152,9 +175,9 @@ function FirstPage() {
                         <nav className="tabs">
                             <ul>
                                 <li><a onClick={event => Click(0)}>Купить билеты</a></li>
-                                <li><a onClick={event => Click(1)}>Статус рейса</a></li>
+                                <li><a onClick={event => Click(1)}>Табло рейсов</a></li>
                                 <li className="active"><a>Регистрация на рейс</a></li>
-                                <li><a onClick={event => Click(3)}>Багаж</a></li>
+                                <li><a onClick={event => Click(3)}>Мои бронирования</a></li>
                             </ul>
                         </nav>
                         <div className="Form1">
@@ -173,7 +196,7 @@ function FirstPage() {
                         <nav className="tabs">
                             <ul>
                                 <li><a onClick={event => Click(0)}>Купить билеты</a></li>
-                                <li><a onClick={event => Click(1)}>Статус рейса</a></li>
+                                <li><a onClick={event => Click(1)}>Табло рейсов</a></li>
                                 <li><a onClick={event => Click(2)}>Регистрация на рейс</a></li>
                                 <li className="active"><a>Мои бронирования</a></li>
                             </ul>

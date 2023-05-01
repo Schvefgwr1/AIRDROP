@@ -143,7 +143,7 @@ input::-webkit-input-placeholder {
   background-size: 100%;
   display: inline-block;
   position: relative;
-  top: 28px;
+  top: 24px;
   border-width: medium;
   border-color: #e30ccd;
   border-style: solid;
@@ -157,7 +157,7 @@ input::-webkit-input-placeholder {
   background-size: 100%;
   display: inline-block;
   position: relative;
-  top: 28px;
+  top: 24px;
   border-width: medium;
   border-color: #e30ccd;
   border-style: solid;
@@ -227,11 +227,22 @@ input::-webkit-input-placeholder {
   border-width: medium;
   border-color: #e30ccd;
   border-style: solid;
-  border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 0px 0px 5px;
+}
+
+.input6_1 {
+  margin-top: 5%;
+  height: 60px;
+  width: 155px;
+  border-width: medium;
+  border-color: #e30ccd;
+  border-style: solid;
+  border-radius: 0px 5px 5px 0px;
 }
 
 .Button2 {
   margin-top: 5%;
+
 }
 
 .input7 {
@@ -240,8 +251,8 @@ input::-webkit-input-placeholder {
   border-width: medium;
   border-color: #e30ccd;
   border-style: solid;
+  border-radius: 0px 5px 5px 0px;
   position: relative;
-  top: -4px;
 }
 
 .tuda2 {

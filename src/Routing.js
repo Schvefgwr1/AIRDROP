@@ -3,6 +3,7 @@ import {BrowserRouter, Route, Routes, Navigate,} from "react-router-dom";
 import FirstPage from "./FirstPage/FirstPage";
 import SecondPage from "./SecondPage/SecondPage";
 import ThirdPage from "./ThirdPage/ThirdPage";
+import FourthPage from "./FourthPage/FourthPage";
 
 export default function Routing() {
     return(
@@ -12,6 +13,7 @@ export default function Routing() {
                 <Route path="/" element={<FirstPage/>} />
                 <Route path="/flights_result" element={<SecondPage/>} />
                 <Route path="/buy_tickets" element={<ThirdPage/>} />
+                <Route path="/tab_flights" element={<FourthPage/>} />
             </Routes>
         </BrowserRouter>
     )
