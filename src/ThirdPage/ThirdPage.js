@@ -5,10 +5,15 @@ import "../SecondPage/SecondPage.css";
 import "./ThirdPage.css"
 import Contacts from "../Contacts/Contacts";
 import axios from "axios";
+import logo from "../Photos/лого-removebg.png";
 
 export default function ThirdPage() {
 
+    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
     const [state, setState] = useState("confirm");
+
+    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
     const location = useLocation();
 
@@ -316,34 +321,83 @@ export default function ThirdPage() {
         return Inputs;
     }
 
-    const PostBookingRequest = async (ticket) => {
+    const [response1, setResponse1] = useState();
+    const [response2, setResponse2] = useState();
+
+    const PostBookingRequest = async (ticket, response) => {
         setState('loading');
         let url = 'http://95.165.11.56:7654/' + 'bookings/';
         let flights_array = [];
         for(let i = 0; i < ticket?.flights.length; i++) {
-            flights_array.push(Number(ticket?.flights[i]?.flight_no));
+            flights_array.push(ticket?.flights[i]?.flight_id);
+        }
+        let passengers = [];
+        for(let i = 0; i < Names.length; i++) {
+            passengers.push({
+               "passenger_id": id[i],
+               "passenger_name": Names[i],
+               "contact_data": {
+                   "phone": tel_n[i],
+                   "email": el_address[i]
+               }
+            });
         }
         let data = {
             "fare_condition": ticket?.fare_condition,
             "flights": flights_array,
-
+            "passengers": passengers
         }
+        console.log(data);
         const request = await axios.post(
             url,
             data
         ).then(
             res => {
                 console.log("Response lololol" + new Date());
+                console.log(res);
+                if(response === response1) {
+                    setResponse1(res.data);
+                }
+                if(response === response2) {
+                    setResponse2(res.data);
+                }
             }
         ).catch(
             (error)=>{
                 console.log('error');
-                console.log(error);
-                console.log(location.state);
                 if(error.response.status === 422) {
                     setState('error');
                 }
             }
+        )
+    }
+
+    function Responses() {
+        PostBookingRequest(ticket1, response1);
+        PostBookingRequest(ticket2, response2);
+        setState("receipt");
+    }
+
+    function ReceiptTitle() {
+        return (
+            <div className="FirstPartBookings">
+                <div className="TextFirstPartBookings">
+                    Маршрутная квитанция
+                </div>
+            </div>
+        )
+    }
+
+    function Card() {
+
+    }
+
+    function Check1() {
+        return (
+            <div className="Check1">
+                {FlightCard(ticket1)}
+
+            </div>
         )
     }
 
@@ -365,7 +419,27 @@ export default function ThirdPage() {
                         go back
                     </div>
                     {PersonalInputs()}
-                    {el_address}
+                    <div className="BuyButton3" onClick={() => Responses()}>
+                        Оплатить
+                    </div>
+                    <Contacts/>
+                </div>
+            )
+        case "receipt":
+            return (
+                <div>
+                    {ReceiptTitle()}
+                    {Check1()}
+                </div>
+            )
+        case 'error':
+            return (
+                <div className="FirstPart">
+                    <img src={logo} className="App-logo" alt="logo" />
+                    <h2 className="Zag_err">Введены неправильные данные</h2>
+                    <div className="Button_1">
+                        <a className="gradient-button_" onClick={() => setState("personal_inp")}>Вернуться к заполнению данных</a>
+                    </div>
                 </div>
             )
     }

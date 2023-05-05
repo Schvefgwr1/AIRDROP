@@ -1,0 +1,132 @@
+.FirstPartBookings {
+    height: 200px;
+    width: 100%;
+    background-image: url("../Photos/фон.png");
+    background-size: 100%;
+    background-position-y: 310px;
+}
+.TextFirstPartBookings {
+    width: 70%;
+    height: 100px;
+    position: relative;
+    top: 50px;
+    left: 6%;
+    color: black;
+    font-weight: 700;
+    font-size: 48px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.Booking {
+    height: 400px;
+    width: 88%;
+    margin-left: 6%;
+    margin-top: 40px;
+    background-color: #f3f3f3;
+    border-radius: 30px/30px;
+}
+.BookingTitle {
+    width: 100%;
+    height: 80px;
+    background-color: #E4BAF8;
+    border-radius: 30px 30px 0px 0px;
+    color: black;
+    font-weight: 650;
+    font-size: 30px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.BookingMainContent {
+    height: 320px;
+    width: 94%;
+    margin-left: 3%;
+}
+.MainFirst {
+    margin-top: 20px;
+    height: 50px;
+    color: black;
+    font-weight: 630;
+    font-size: 40px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.MainSecond {
+    margin-top: 25px;
+    height: 100px;
+    display: flex;
+}
+.MainSecond1 {
+    width: 20%;
+    font-weight: 630;
+    font-size: 30px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.MainSecond2 {
+    width: 40%;
+    font-weight: 630;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.MainSecond3 {
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.MainSecond4 {
+    width: 10%;
+    font-weight: 630;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.MainSecond5 {
+    width: 20%;
+    font-weight: 630;
+    font-size: 30px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+.CircleType____ {
+    background-color: #E4BAF8;
+    height: 60%;
+    width: 60%;
+    border-radius: 100%/100%;
+    color: white;
+    font-weight: 650;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.MainThird {
+    margin-top: 20px;
+    height: 100px;
+    display: flex;
+}
+.MainThird1 {
+    width: 20%;
+    font-weight: 630;
+    font-size: 30px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.MainThird2 {
+    width: 40%;
+    font-weight: 630;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
