@@ -324,7 +324,7 @@ export default function ThirdPage() {
     const [response1, setResponse1] = useState();
     const [response2, setResponse2] = useState();
 
-    const PostBookingRequest = async (ticket, response) => {
+    const PostBookingRequest = async (ticket, resp_number) => {
         setState('loading');
         let url = 'http://95.165.11.56:7654/' + 'bookings/';
         let flights_array = [];
@@ -355,10 +355,10 @@ export default function ThirdPage() {
             res => {
                 console.log("Response lololol" + new Date());
                 console.log(res);
-                if(response === response1) {
+                if(resp_number === 1) {
                     setResponse1(res.data);
                 }
-                if(response === response2) {
+                if(resp_number === 2) {
                     setResponse2(res.data);
                 }
             }
@@ -373,8 +373,8 @@ export default function ThirdPage() {
     }
 
     function Responses() {
-        PostBookingRequest(ticket1, response1);
-        PostBookingRequest(ticket2, response2);
+        PostBookingRequest(ticket1, 1);
+        PostBookingRequest(ticket2, 2);
         setState("receipt");
     }
 
@@ -388,18 +388,45 @@ export default function ThirdPage() {
         )
     }
 
-    function Card() {
+    function Check(response, ticket) {
 
-    }
+        function tickets() {
+            let tickets = [];
+            for(let i = 0; i < response?.tickets.length; i++) {
+                tickets.push(<text>{response?.tickets[i]?.ticket_no + " "}</text>);
+            }
+            return tickets;
+        }
 
-    function Check1() {
         return (
             <div className="Check1">
-                {FlightCard(ticket1)}
-
+                {FlightCard(ticket)}
+                <div className="InformationTicket">
+                    <div className="InformationTicketPart">
+                        <div className="TextBlock">
+                            Номер заказа <br/> <br/> {response?.book_ref}
+                        </div>
+                    </div>
+                    <div className="InformationTicketPart">
+                        <div className="TextBlock">
+                            Номер бронирования <br/> <br/> {response?.book_ref}
+                        </div>
+                    </div>
+                    <div className="InformationTicketPart">
+                        <div className="TextBlock">
+                            Номера билетов <br/> <br/> {tickets()}
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }
+
+    const [stateNavigationTab, setStateNavigationTab] = useState(false);
+    const handleChangeStateNavigationTab = () => {
+        setStateNavigationTab(true);
+    }
+
 
     switch (state) {
         case "confirm":
@@ -429,7 +456,13 @@ export default function ThirdPage() {
             return (
                 <div>
                     {ReceiptTitle()}
-                    {Check1()}
+                    {Check(response1, ticket1)}
+                    {Check(response2, ticket2)}
+                    <div className="Button____">
+                        <a className="gradient-button____" onClick={handleChangeStateNavigationTab}>Продолжить</a>
+                        {stateNavigationTab && <Navigate className to="/" replace={true}/>}
+                    </div>
+                    <Contacts/>
                 </div>
             )
         case 'error':
