@@ -14,7 +14,7 @@ export default
 /**
  * The page with flights for user request
  * @returns {JSX.Element}
- * @constructor
+ * @function
  */
 
 function SecondPage() {
