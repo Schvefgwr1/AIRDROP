@@ -97,6 +97,11 @@ function FirstPage() {
             setStateNavigationTab(true);
         };
 
+        const [book_num, setBookNum] = useState("");
+        const handleChangeBookNum = event => {
+            setBookNum(event.target.value);
+        };
+
         switch (part) {
             case 0:
                 return (
@@ -154,12 +159,23 @@ function FirstPage() {
                         </nav>
                         <div className="Form1">
                             <br/>
-                            <input className='input6' type='text' placeholder="Откуда" value={tab_departure} onChange={handleChangeTabDeparture}/>
-                            <input className='input6_1' type='text' placeholder="Куда" value={tab_arrival} onChange={handleChangeTabArrival}/>
-                            <div className='tuda2'></div>
-                            <input className='input7' type="date" id="date" name="date" value={tab_date} onChange={handleChangeTabDate}/>
+                            <div className="FormTabCont">
+                                <div className="ContenerTab">
+                                    <input className='input6' type='text' placeholder="Откуда" value={tab_departure} onChange={handleChangeTabDeparture}/>
+                                </div>
+                                <div className="ContenerTab">
+                                    <input className='input6_1' type='text' placeholder="Куда" value={tab_arrival} onChange={handleChangeTabArrival}/>
+                                </div>
+                                <div className="ContenerTab2">
+                                    <div className='tuda2'></div>
+                                </div>
+                                <div className="ContenerTab3">
+                                    <input className='input7' type="date" id="date" name="date" value={tab_date} onChange={handleChangeTabDate}/>
+                                </div>
+                            </div>
+                            <br/>
                             <div className="Button2">
-                                <a className="gradient-button" onClick={handleChangeStateNavigationTab}>Найти</a>
+                                <a className="__gradient-button" onClick={handleChangeStateNavigationTab}>Найти</a>
                                 {stateNavigationTab && <Navigate className to="/tab_flights" state={new Map([
                                     ['d_airport', tab_departure],
                                     ['ar_airport', tab_arrival],
@@ -182,10 +198,12 @@ function FirstPage() {
                         </nav>
                         <div className="Form1">
                             <br/>
-                            <input className='input8' type='text' placeholder="Фамилия пассажира (латиницой)"/>
-                            <input className='input9' type='text' placeholder='Номер заказа (брони)'/>
+                            <br/>
+                            <br/>
+                            <br/>
                             <div className="Button2">
-                                <a href="" className="gradient-button">Найти</a>
+                                <a href="" className="gradient-button" onClick={handleChangeStateNavigationTab}>ЗАРЕГИСТРИРОВАТЬСЯ</a>
+                                {stateNavigationTab && <Navigate className to="/registration" replace={true}/>}
                             </div>
                         </div>
                     </div>
@@ -202,9 +220,12 @@ function FirstPage() {
                             </ul>
                         </nav>
                         <div className='Form1'>
-                            <input className='input10' type='text' placeholder='Номер заказа (брони)'/>
-                            <div className="Button2">
-                                <a href="" className="gradient-button">Найти</a>
+                            <input className='inputBookingNumber' type='text' placeholder="номер бронирования" value={book_num} onChange={handleChangeBookNum}/>
+                            <div className="Button3">
+                                <a className="gradient-button" onClick={handleChangeStateNavigationTab}>ПОКАЗАТЬ</a>
+                                {stateNavigationTab && <Navigate className to="/my_bookings" state={new Map([
+                                    ['book_num', book_num]
+                                ])} replace={true}/>}
                             </div>
                         </div>
                     </div>

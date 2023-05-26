@@ -5,6 +5,7 @@ import SecondPage from "./SecondPage/SecondPage";
 import ThirdPage from "./ThirdPage/ThirdPage";
 import FourthPage from "./FourthPage/FourthPage";
 import FifthPage from "./FifthPage/FifthPage";
+import SixPage from "./SixPage/SixPage";
 
 export default function Routing() {
     return(
@@ -16,6 +17,7 @@ export default function Routing() {
                 <Route path="/buy_tickets" element={<ThirdPage/>} />
                 <Route path="/tab_flights" element={<FourthPage/>} />
                 <Route path="/my_bookings" element={<FifthPage/>} />
+                <Route path="/registration" element={<SixPage/>} />
             </Routes>
         </BrowserRouter>
     )

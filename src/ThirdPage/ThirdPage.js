@@ -6,6 +6,7 @@ import "./ThirdPage.css"
 import Contacts from "../Contacts/Contacts";
 import axios from "axios";
 import logo from "../Photos/лого-removebg.png";
+import Cookies from 'js-cookie';
 
 export default function ThirdPage() {
 
@@ -424,6 +425,12 @@ export default function ThirdPage() {
 
     const [stateNavigationTab, setStateNavigationTab] = useState(false);
     const handleChangeStateNavigationTab = () => {
+        const existingCookies = Cookies.get('myCookie');
+        const newCookies = existingCookies ? existingCookies + ", " + response1?.book_ref : response1?.book_ref;
+        Cookies.set('myCookie', newCookies);
+        const existingCookies2 = Cookies.get('myCookie');
+        const newCookies2 = existingCookies2 ? existingCookies2 + ", " + response2?.book_ref : response2?.book_ref;
+        Cookies.set('myCookie', newCookies2);
         setStateNavigationTab(true);
     }
 

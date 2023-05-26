@@ -121,7 +121,7 @@ input::-webkit-input-placeholder {
   border-color: #e30ccd;
   border-style: solid;
   position: relative;
-  top: -4px;
+  top: -8px;
 }
 
 .input3 {
@@ -132,7 +132,7 @@ input::-webkit-input-placeholder {
   border-style: solid;
   border-radius: 0px 5px 5px 0px;
   position: relative;
-  top: -4px;
+  top: -8px;
 }
 
 .tuda {
@@ -221,54 +221,96 @@ input::-webkit-input-placeholder {
 /*статус рейса*/
 
 .input6 {
-  margin-top: 5%;
-  height: 60px;
-  width: 155px;
-  border-width: medium;
-  border-color: #e30ccd;
-  border-style: solid;
-  border-radius: 5px 0px 0px 5px;
+  height: 95%;
+  width: 98%;
 }
 
 .input6_1 {
-  margin-top: 5%;
+  height: 95%;
+  width: 98%;
+}
+
+.input7 {
+  height: 98%;
+  width: 98%;
+}
+
+.inputBookingNumber {
+  position: relative;
+  top: 40px;
   height: 60px;
-  width: 155px;
+  width: 51%;
+  border-style: solid;
+  border-width: medium;
+  border-color: #e30ccd;
+  border-radius: 5px/5px;
+  color: black;
+  font-weight: 550;
+  font-size: 15px;
+}
+
+.tuda2 {
+  height: 98%;
+  width: 100%;
+  background-image: url(../Photos/FlyOut.jpg);
+  background-size: 100%;
   border-width: medium;
   border-color: #e30ccd;
   border-style: solid;
-  border-radius: 0px 5px 5px 0px;
+}
+
+.ContenerTab {
+  width: 29.33%;
+  height: 60px;
+
+}
+.ContenerTab2 {
+  height: 60px;
+  width: 12%;
+  margin-left: 0.33%;
+}
+.ContenerTab3 {
+  height: 60px;
+  width: 28.61%;
+  margin-left: 0.72%;
+}
+.FormTabCont {
+  display: flex;
+  height: 62px;
+  width: 80%;
+  margin-left: 10%;
+  border-width: medium;
+  border-color: #e30ccd;
+  border-style: solid;
+  border-radius: 5px 5px 5px 5px;
 }
 
 .Button2 {
   margin-top: 5%;
-
 }
 
-.input7 {
-  height: 60px;
-  width: 150px;
-  border-width: medium;
-  border-color: #e30ccd;
-  border-style: solid;
-  border-radius: 0px 5px 5px 0px;
+.Button3 {
   position: relative;
-  bottom: 1.5%;
+  top: 130px;
 }
 
-.tuda2 {
-  margin-left: 6%;
-  height: 60px;
-  width: 60px;
-  background-image: url(../Photos/FlyOut.jpg);
-  background-size: 100%;
-  display: inline-block;
-  position: relative;
-  top: 28px;
-  border-width: medium;
-  border-color: #e30ccd;
-  border-style: solid;
-  border-radius: 5px 0px 0px 5px;
+.__gradient-button {
+  margin-left: auto;
+  margin-right: auto;
+  text-decoration: none;
+  color: white;
+  padding: 26px 36.5%;
+  border-radius: 5px/5px;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-image: linear-gradient(to right, #e30ccd 0%, #79055f 51%, #e30ccd 100%);
+  background-size: 200% auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+  transition: .5s;
+}
+.__gradient-button:hover {
+  background-position: right center;
 }
 
 /* Регистрация на рейс */
